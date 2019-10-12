@@ -1,11 +1,18 @@
-# Transformer Translation Model
-This is an implementation of the Transformer translation model as described in the [Attention is All You Need](https://arxiv.org/abs/1706.03762) paper. Based on the code provided by the authors: [Transformer code](https://github.com/tensorflow/tensor2tensor/blob/master/tensor2tensor/models/transformer.py) from [Tensor2Tensor](https://github.com/tensorflow/tensor2tensor).
+# Transformer 
+This is a modfified version of the implementation of the Transformer model by [tensorflow-models.](https://github.com/tensorflow/models)
+Original version was written to work over known en-de machine translation problems with scripts to reproduce en-de translation results. This version lets you use Transformer architecture for any textual sequence-to-sequence problem. [Download and preprocess datasets](#download-and-preprocess-datasets) contains the instructions to train the model on your own data.
 
-Transformer is a neural network architecture that solves sequence to sequence problems using attention mechanisms. Unlike traditional neural seq2seq models, Transformer does not involve recurrent connections. The attention mechanism learns dependencies between tokens in two sequences. Since attention weights apply to all tokens in the sequences, the Tranformer model is able to easily capture long-distance depedencies.
+# To get started
 
-Transformer's overall structure follows the standard encoder-decoder pattern. The encoder uses self-attention to compute a representation of the input sequence. The decoder generates the output sequence one token at a time, taking the encoder output and previous decoder-outputted tokens as inputs.
+You need to clone the original directory and then replace the transformer model with this repo. You could follow these commands:
 
-The model also applies embeddings on the input and output tokens, and adds a constant positional encoding. The positional encoding adds information about the position of each token.
+```
+git clone https://github.com/tensorflow/models.git
+cd models/official/
+rm -r transformer
+git clone https://github.com/abhishek-niranjan/transformer-tensorflow
+mv transformer-tensorflow transformer
+```
 
 ## Contents
   * [Contents](#contents)
